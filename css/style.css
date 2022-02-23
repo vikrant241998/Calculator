@@ -1,0 +1,298 @@
+/* Css - Reset */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  /* Css Variable  */
+  :root{
+    --container-bg: #f9a71f;
+    --header-bg:  #ffff;
+    --h3-color: #542dca;
+    --slider-color: #2196F3;
+    --body-bg: #4f4f4f;
+    --div-bg: #f4fff9;
+    --div-color: #006ea3;
+    --color-btn: #eb761a;
+    --color-btn-hover: #000000;
+    --color-btn-color-hover: #ffff;
+    --div-bg-hover:  #006ea3;
+    --div-color-hover: #f4fff9;
+    --calcu-body-bg: #bcbcbc;
+    --input-color:  #000000;
+    --h3-colorhover: #000000;
+    --swap-model-bg: #000000;
+    --swal-text-first-child-color: #ff0101;
+    --calculator-bog-shadow: #7a5a5a; 
+  }
+  
+  /* Section - Theme - Colors  */
+  [dark-Theme="dark"]
+  {
+    --container-bg: #20382a;
+    --header-bg:  rgb(71 121 222);
+    --h3-color: #ffff;
+    --body-bg: #6f93c6;
+    --slider-color: #ffff;
+    --div-bg: rgb(31, 31, 31);
+    --div-color: #ffff;
+    --color-btn: #21eb1a;
+    --color-btn: #1d2f5a;
+    --color-btn-hover: #0d0d0e;
+    --color-btn-color-hover: rgb(182, 37, 37);
+    --div-bg-hover:  rgb(36 106 89);
+    --div-color-hover: #f4fff9;
+    --calcu-body-bg: #000000;
+    --input-color:  #da3333;
+    --h3-colorhover: #fbff0e;
+    --swap-model-bg: #e2dc36;
+    --swal-text-first-child-color: #05740d;
+    --calculator-bog-shadow: #ffffff; 
+  }
+  
+
+ /* Section - Container  */
+  .container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--container-bg);
+    overflow: hidden;
+  }
+
+
+/* Section - Calculator */
+.calculator{
+    width: 320px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 10% 20% auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 21px 5px var(--calculator-bog-shadow);
+  }
+
+
+/* Section - claculator - Header */
+.claculator-header{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-color:var(--header-bg);
+    overflow: hidden;
+  }
+
+
+/* -------------------Toggle Switch Button------------------- */
+
+/* h3 - section */
+h3{
+  color: var(--h3-color);
+  margin-bottom: 15px;
+  font-size: 20px;
+  margin-left: 11px;
+}
+
+/* h3 - hover - section */
+h3:hover{
+  color: var(--h3-colorhover);
+  transition: 0.2s ease-in-out;
+}
+
+
+/* Switch - Button - Section */
+.switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Switch - Button - input - Section */
+/* Switch - Button - input - Section */
+.switchBtn input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* slider - Section */
+.slider {
+  position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b1b1b1;
+    transition: .4s;
+  }
+  
+  /* slider - before - Section */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 12px;
+    left: 0px;
+    bottom: 1px;
+    background-color: black;
+    transition: .4s;
+  }
+  
+  /* input - check- slider- section */
+  input:checked + .slider {
+    background-color: var(--slider-color);
+  }
+  
+  /* input - focus + slider - section */
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(28px);
+  }
+  
+  /* Rounded - sliders - section */
+  .slider.round {
+    border-radius: 34px;
+    height: 15px;
+    width: 40px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  /* Section claculator - Body  */
+  .claculator-body{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    background-color: var(--calcu-body-bg);
+    overflow: hidden;
+  }
+  
+
+  /* Section claculator - Body - input */
+.claculator-body #input{
+    padding: 0px 10px;
+    font-size: 2.1rem;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+
+/*  Section - claculator - footer  */
+.claculator-footer{
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: var(--body-bg);
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  /*  Section-claculator-footer -div */
+  .claculator-footer div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    background-color: var(--div-bg);
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: var(--div-color);
+  }
+  
+
+  /*  Section-claculator-footer-div-hover */
+  .claculator-footer div:hover{
+    background-color: var(--div-bg-hover);
+    color: var(--div-color-hover);
+    box-shadow: 0px 0px 6px 1px white;
+  }
+  
+  /*  Section-claculator-color-btn */
+  .claculator-footer .color-btn{
+    background-color: var(--color-btn);
+    color: #ffff;
+  }
+  
+  /*  Section-claculator-color-btn-hover */
+  .claculator-footer .color-btn:hover{
+    background-color: var(--color-btn-hover);  
+    color: var(--color-btn-color-hover);
+    font-size: 22px;
+    transition: 0.2s ease-in-out;  
+    box-shadow: 0px 0px 20px 2px #c3aaaa;
+  }
+  
+  
+  /*  Section-claculator-color-btn-dark */
+  .claculator-footer .color-btn-dark{
+    background-color: #308d71;
+    color: #ffff;
+  }
+  
+  /*  Section-claculator-color-btn-dark-hover */
+.claculator-footer .color-btn-dark:hover{
+  background-color: #308d71;
+  color: #ffff;
+  box-shadow: 0px 0px 6px 1px #3aff85;
+}
+
+
+
+.swal-modal{
+  width: 425px;
+    height: 110px;
+    position: absolute;
+    top: 8px;
+    left: 560px;
+    margin: auto;
+    background-color: var(--swap-model-bg);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px #000000;
+}
+
+.swal-text:first-child {
+  font-size: 17px;
+  margin-top: 5px;
+  text-align: center;
+  color: var(--swal-text-first-child-color);
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.swal-button {
+  font-size: 16px;
+  width: 65px;
+  height: 33px;
+  position: relative;
+  top: -46px;
+  left: 8px;
+  background-color: #1ed3ca;
+  color: #000000;
+  font-family: emoji;
+  border-radius: 10px;
+  padding: 9px 1px;
+  }
